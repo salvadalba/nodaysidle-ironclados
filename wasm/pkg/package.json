@@ -1,0 +1,24 @@
+{
+  "name": "ironclad-wasm",
+  "type": "module",
+  "collaborators": [
+    "Ironclad OS"
+  ],
+  "description": "WASM demo engine for Ironclad OS",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ironclad-os/wasm"
+  },
+  "files": [
+    "ironclad_wasm_bg.wasm",
+    "ironclad_wasm.js",
+    "ironclad_wasm.d.ts"
+  ],
+  "main": "ironclad_wasm.js",
+  "types": "ironclad_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
