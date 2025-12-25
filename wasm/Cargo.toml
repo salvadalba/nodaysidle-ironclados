@@ -1,0 +1,31 @@
+[package]
+name = "ironclad-wasm"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ironclad OS"]
+description = "WASM demo engine for Ironclad OS"
+license = "MIT"
+repository = "https://github.com/ironclad-os/wasm"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = ["console"] }
+console_error_panic_hook = { version = "0.1", optional = true }
+wee_alloc = { version = "0.4.5", optional = true }
+
+[features]
+default = ["console_error_panic_hook"]
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+opt-level = "s"
+lto = true
